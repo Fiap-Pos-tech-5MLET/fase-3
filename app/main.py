@@ -9,8 +9,9 @@ from app.auth.routes import login, register
 from app.config import get_settings
 from huggingface_hub import hf_hub_download
 from contextlib import asynccontextmanager
+# Importa as rotas de pacientes e auditoria
 from app.routes.patiente_route import router as patient_router
-
+from app.routes.audit_route import router as audit_router
 # Carrega as configurações do projeto, incluindo as variáveis do modelo
 load_dotenv()
 __SETTINGS__ = get_settings()
@@ -68,6 +69,7 @@ app.add_middleware(
 app.include_router(login.router)
 app.include_router(register.router)
 app.include_router(patient_router)
+app.include_router(audit_router)
 
 @app.get("/", tags=["Home"])
 async def root():

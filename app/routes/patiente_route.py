@@ -1,8 +1,11 @@
 import numpy as np
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Request, Query
+from typing import Optional, List, Dict
+
 from app.models.patient_data import PatientData
 from app.config import get_settings
-from app.auth.schemas.dependencies import get_current_user  # ← AUTENTICAÇÃO
+from app.auth.schemas.dependencies import get_current_user
+from app.utils.audit_log import audit_prediction, get_audit_logs
 
 router = APIRouter(
     prefix="/api/prediction", 
@@ -13,7 +16,7 @@ router = APIRouter(
 __SETTINGS__ = get_settings()
 
 @router.post("/predict", response_model=dict, status_code=status.HTTP_200_OK)
-def predict_diabetes(data: PatientData) -> dict:
+def predict_diabetes(request: Request,data: PatientData) -> dict:
     """
     Realiza a predição de diabetes com base nos dados do paciente.
 
@@ -62,15 +65,34 @@ def predict_diabetes(data: PatientData) -> dict:
         result_text = "Positive" if prediction[0] == 1 else "Negative"
         
         # 3. Retorno de Sucesso (Status 200 OK)
+
+        
+        input_dict = data.dict()
+        output_dict = {"prediction_class": result_text}
+        
+        # Auditoria: Passando o nome da rota dinamicamente
+        audit_prediction(
+            input_data=input_dict,
+            output_data=output_dict,
+            route_name=request.url.path
+        )
+        
         return {
             "prediction": result_text, 
             "status": "success",
             "message": "Predição realizada com sucesso."
         }
         
-    # 4. Tratamento de Erro: Erro Interno de Predição (Status 500 Internal Server Error)
     except Exception as e:
         # Registre o erro 'e' em um log aqui (prática recomendada)
         print(f"Erro durante a predição: {e}") 
-        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,detail=f"Erro interno do servidor durante a predição: {str(e)}")
-
+        audit_prediction(
+            input_data=data.dict(),
+            output_data={"error": str(e)},
+            route_name=request.url.path
+        )
+        
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Erro interno do servidor durante a predição: {str(e)}"
+        )
