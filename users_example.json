@@ -1,0 +1,9 @@
+{
+    "usuarioteste": {
+        "username": "usuarioteste",
+        "full_name": "Usuario Teste",
+        "email": "teste@example.com",
+        "disabled": false,
+        "hashed_password": "$2b$12$kHmMnaRTS8ClI2CyRSdRturDV/SGaLDXwd4J76FZGdjwlch7OtWse"
+    }
+}
