@@ -88,3 +88,32 @@ def get_audit_logs(date_filter: Optional[str] = None, route_filter: Optional[str
         return []
     
     return filtered_logs
+
+# --- NOVO: Função para buscar log por ID ---
+def get_audit_log_by_id(request_id: str) -> Optional[Dict]:
+    """
+    Busca um log de auditoria específico pelo seu ID de requisição.
+
+    Args:
+        request_id (str): O ID único da requisição.
+
+    Returns:
+        Optional[Dict]: O log da requisição se encontrado, caso contrário, None.
+    """
+    if not os.path.exists(AUDIT_LOG_FILE):
+        return None
+    
+    try:
+        with open(AUDIT_LOG_FILE, "r") as f:
+            for line in f:
+                try:
+                    log_entry = json.loads(line)
+                    if log_entry.get("request_id") == request_id:
+                        return log_entry
+                except json.JSONDecodeError:
+                    continue
+    except IOError as e:
+        print(f"Erro ao ler o arquivo de auditoria: {e}")
+        return None
+    
+    return None
