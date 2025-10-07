@@ -15,6 +15,14 @@ O projeto foi desenvolvido como parte da **Fase 3** do curso de **Pós-Tech em M
 
 Desenvolver uma aplicação web interativa que auxilie profissionais de saúde na avaliação rápida do risco diabético de pacientes, utilizando técnicas avançadas de Machine Learning.
 
+## 🎥 Vídeo Explicativo
+
+[![Assista ao vídeo explicativo](https://img.shields.io/badge/▶️_Assistir_Vídeo-YouTube-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=0JFNX6CwFww)
+
+Confira o vídeo completo explicando o processo de desenvolvimento, análise exploratória, modelagem e funcionamento da aplicação:
+
+**🔗 [https://www.youtube.com/watch?v=0JFNX6CwFww](https://www.youtube.com/watch?v=0JFNX6CwFww)**
+
 ## 🚀 Funcionalidades
 
 - ✅ Predição de risco diabético em três categorias
