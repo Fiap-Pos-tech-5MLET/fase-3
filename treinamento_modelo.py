@@ -14,7 +14,7 @@ from sklearn.metrics import (
 )
 from sklearn.pipeline import Pipeline
 
-RANDOM_STATE = 2025
+RANDOM_STATE = 42
 
 data_raw = pd.read_csv("data/Dataset of Diabetes.csv")
 
