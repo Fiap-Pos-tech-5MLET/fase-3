@@ -54,15 +54,54 @@ O modelo foi treinado com o **Dataset of Diabetes**, que contém informações s
 
 ```
 fase-3/
-├── app.py                      # Aplicação Streamlit
-├── treinamento_modelo.py       # Script de treinamento do modelo
-├── utils.py                    # Funções auxiliares
-├── pipeline_modelo.joblib      # Modelo treinado (pipeline completo)
-├── requirements.txt            # Dependências do projeto
+├── app.py                                  # Aplicação Streamlit
+├── treinamento_modelo.py                   # Script de treinamento do modelo
+├── Notebook_Classificacao_Diabetes.ipynb   # Notebook com análise exploratória completa
+├── utils.py                                # Funções auxiliares
+├── pipeline_modelo.joblib                  # Modelo treinado (pipeline completo)
+├── requirements.txt                        # Dependências do projeto
 ├── data/
-│   └── Dataset of Diabetes.csv # Dataset original
-└── README.md                   # Documentação do projeto
+│   └── Dataset of Diabetes.csv             # Dataset original
+└── README.md                               # Documentação do projeto
 ```
+
+## 📓 Notebook de Análise Exploratória
+
+O arquivo `Notebook_Classificacao_Diabetes.ipynb` contém uma análise exploratória completa do dataset, incluindo:
+
+### 🔍 Análise Estatística
+- **Análise descritiva** das variáveis numéricas e categóricas
+- **Testes de normalidade** (Shapiro-Wilk, D'Agostino's K-squared)
+- **Análise de correlações** entre as features
+- **Detecção de outliers** e valores atípicos
+
+### 📊 Visualizações
+- **Distribuições univariadas** de todas as features
+- **Boxplots** para identificação de outliers
+- **Heatmaps de correlação** para análise de relações entre variáveis
+- **Gráficos de dispersão** para visualização de padrões
+- **Análise da variável alvo** (distribuição das classes)
+
+### 🤖 Modelagem e Avaliação
+- **Preparação dos dados** (limpeza, transformações, encoding)
+- **Divisão treino/teste** com estratificação
+- **Treinamento de múltiplos modelos**:
+  - Decision Tree
+  - Random Forest
+  - XGBoost
+  - LightGBM
+- **Comparação de métricas** (Acurácia, Precisão, Recall, F1-Score)
+- **Matrizes de confusão** para cada modelo
+- **Curvas ROC e AUC** multiclasse
+- **Análise SHAP** para interpretabilidade do modelo
+
+### 🎯 Resultados Detalhados
+- Comparativo de performance entre diferentes algoritmos
+- Análise de importância das features
+- Identificação dos principais indicadores de risco diabético
+- Visualizações das predições e probabilidades
+
+**📌 Nota**: O notebook é uma ferramenta complementar para entender todo o processo de desenvolvimento do modelo, desde a análise exploratória até a seleção do algoritmo final (XGBoost) utilizado na aplicação.
 
 ## 🔧 Instalação
 
@@ -226,5 +265,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para:
 Para dúvidas ou sugestões, entre em contato através do repositório no GitHub.
 
 ---
-
-**Desenvolvido com ❤️ para auxiliar na prevenção e diagnóstico precoce do diabetes**
