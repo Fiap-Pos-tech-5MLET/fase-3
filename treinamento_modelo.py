@@ -128,9 +128,9 @@ def xgboost_model_func(X_train, X_test, y_train, y_test):
         'objective': 'multi:softprob',  # Define o problema como classificação multiclasse e retorna probabilidades.
         'n_estimators': 150,            # Um número razoável de árvores para começar.
         'learning_rate': 0.05,           # Taxa de aprendizado. Um valor mais baixo torna o modelo mais robusto.
-        'max_depth': 5,                 # Profundidade máxima das árvores. Essencial para evitar overfitting em dados pequenos.
-        #'subsample': 0.8,               # Usa 80% das amostras para treinar cada árvore, previne overfitting.
-        #'colsample_bytree': 0.8,        # Usa 80% das features para treinar cada árvore, previne overfitting.
+        'max_depth': 7,                 # Profundidade máxima das árvores. Essencial para evitar overfitting em dados pequenos.
+        'subsample': 0.9,               # Usa 80% das amostras para treinar cada árvore, previne overfitting.
+        'colsample_bytree': 0.7,        # Usa 80% das features para treinar cada árvore, previne overfitting.
         'eval_metric': 'mlogloss',      # Métrica de avaliação a ser usada (multiclass logloss).
         'random_state': RANDOM_STATE,
         'n_jobs': -1
