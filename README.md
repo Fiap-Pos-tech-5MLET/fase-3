@@ -199,7 +199,14 @@ Converte valores de mg/dL para unidades do Sistema Internacional (SI):
 
 ## 👥 Autores
 
-Projeto desenvolvido pelos alunos do curso de Pós-Tech em Machine Learning Engineering da FIAP.
+Este projeto foi desenvolvido com a colaboração dos seguintes membros:
+|Nome | RM | Github|
+|----|----|----|
+|Lucas Felipe de Jesus Machado      | RM364306 | [link](https://github.com/lfjmachado)
+|Antônio Teixeira Santana Neto      | RM364480 | [link](https://github.com/antonioteixeirasn)
+|Gabriela Moreno Rocha dos Santos   | RM364538 | [link](https://github.com/gabrielaMSantos)
+|Erik Douglas Alves Gomes           | RM364379 | [link](https://github.com/Erik-DAG)
+|Leonardo Fernandes Soares          | RM364648 | [link](https://github.com/leferso)
 
 - **Repositório**: [Fiap-Pos-tech-5MLET/fase-3](https://github.com/Fiap-Pos-tech-5MLET/fase-3)
 
