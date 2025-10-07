@@ -23,6 +23,28 @@ Confira o vídeo completo explicando o processo de desenvolvimento, análise exp
 
 **🔗 [https://www.youtube.com/watch?v=0JFNX6CwFww](https://www.youtube.com/watch?v=0JFNX6CwFww)**
 
+## 🧪 Teste no Google Colab
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Wn_0dmIa4CnsBt5soKfgWqauUJByE-fS#scrollTo=QDK2N3KpUFfr)
+
+Você pode testar o projeto diretamente no Google Colab sem precisar instalar nada localmente:
+
+**🔗 [https://colab.research.google.com/drive/1Wn_0dmIa4CnsBt5soKfgWqauUJByE-fS#scrollTo=QDK2N3KpUFfr](https://colab.research.google.com/drive/1Wn_0dmIa4CnsBt5soKfgWqauUJByE-fS#scrollTo=QDK2N3KpUFfr)**
+
+### 📤 Como usar o Colab
+
+Para executar o notebook no Google Colab, você precisará fazer o upload do dataset:
+
+1. **Baixe o arquivo** `Dataset of Diabetes.csv` da pasta `data/` deste repositório
+2. **Abra o notebook** no Google Colab usando o link acima
+3. **Faça o upload do arquivo** no Colab:
+   - Clique no ícone de **pasta** 📁 no menu lateral esquerdo
+   - Clique no ícone de **upload** 📤
+   - Selecione o arquivo `Dataset of Diabetes.csv`
+4. **Execute as células** do notebook sequencialmente
+
+**💡 Dica**: O arquivo será mantido apenas durante a sessão. Se a sessão expirar, você precisará fazer o upload novamente.
+
 ## 🚀 Funcionalidades
 
 - ✅ Predição de risco diabético em três categorias
