@@ -235,9 +235,13 @@ O sistema retornará a classificação: **Diabético**, **Não-Diabético** ou *
 - **Parâmetros otimizados**:
   - `n_estimators`: 150
   - `learning_rate`: 0.05
-  - `max_depth`: 5
+  - `max_depth`: 7
+  - `subsample`: 0.9
+  - `colsample_bytree`: 0.7
   - `objective`: multi:softprob
   - `eval_metric`: mlogloss
+  - `random_state`: 42
+  - `n_jobs`: -1
 
 ### Métricas de Avaliação
 
